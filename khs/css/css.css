@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    list-style: none;
+}
+
+body>h1 {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 500px;
+    height: 500px;
+
+}
+
+div,
+ul {
+    text-align: center;
+    margin-top: 10px;
+}
+
+ul>li {
+    display: inline-block;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    border: none;
+    color: brown;
+}
+
+button {
+    
+}

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+}
+
+.container,
+.container>div {
+    display: grid;
+    gap: 3px;
+}
+
+.container {
+    grid-template-columns: 9fr 1fr;
+    height: 100vh;
+}
+
+.container div div {
+    background-color: cadetblue;
+}
+
+/* ===================================================================== */
+
+.container>div:nth-child(1) {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.container>div:nth-child(1) div:nth-child(2n),
+.container>div:nth-child(2) div:nth-child(2n+1) {
+    opacity: .3;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소간 박스 구성요소의 포함과 수직 마진의 공유 여부</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body>
+    <h1>요소간 박스 구성요소의 포함과 수직 마진의 공유 여부</h1>
+    <hr>
+
+    <h2>1. 블럭요소 내 인라인 요소의 포함과 마진의 미공유</h2>
+    <div>
+        <span class="inline">인라인1</span>
+        <span class="inline">인라인2</span>
+    </div>
+    <hr>
+
+    <h2>2. 블럭요소 내 인라인 블럭요소의 포함과 수직 마진의 미공유</h2>
+    <div>
+        <span class="inlineBlock">인라인블럭1</span>
+        <span class="inlineBlock">인라인블럭2</span>
+    </div>
+</body>
+
+</html>
+
+div {
+background: yellowgreen;
+height: 100px;
+margin: 20px;
+}
+
+span {
+background-color: aquamarine;
+}
+
+/*
+블럭요소 내에서 컨텐트 영역을 제외한 인라인 요소의 박스 구성요소는
+수직 구성요소는 포함되지 않고 수평 구성요소만 포함됨을 확인 가능.
+따라서 수직으로 배치된 인라인 요소간에도 컨텐트 영역을 제외한 다른
+수직 박스 구성요소는 적용되지 않음.
+*/
+.inline {
+/* margin:10px; */
+/* padding:10px; */
+/* border:solid 1px; */
+}
+
+/*
+블럭요소 내에 인라인 블럭요소는 모든 박스 구성요소가 포함되며 수직
+마진이 서로 맞닿아도 중첩되지 않아 마진이 공유되지 않음을 확인 가능.
+즉, 블럭요소와 인라인 블럭요소는 마진이 서로 맞닿아도 중첩되지 않음.
+따라서 수직 마진의 공유는 블럭요소 간에만 적용됨을 확인 가능.
+*/
+.inlineBlock {
+display: inline-block;
+/* margin:20px; */
+/* padding:10px; */
+/* border:solid 1px; */
+}

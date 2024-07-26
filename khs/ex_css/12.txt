@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header,
+main {
+    width: 600px;
+    margin: auto;
+}
+
+header nav {
+    margin-bottom: 20px;
+    color: white;
+}
+
+main p {
+    text-align: justify;
+    word-break: break-all;
+}
+
+/* =========================================================================== */
+/* header */
+
+header nav>ul {
+    display: flex;
+    background-color: darkslategray;
+}
+
+header nav>ul>li {
+    flex: 1;
+
+    line-height: 40px;
+    padding: 0 20px;
+
+    position: relative;
+}
+
+header nav ul ul {
+    background-color: cadetblue;
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    display: none;
+}
+
+nav ul ul li {
+    padding: 0 20px;
+    font-size: .7em;
+}
+
+nav>ul>li:hover ul {
+    display: block;
+}

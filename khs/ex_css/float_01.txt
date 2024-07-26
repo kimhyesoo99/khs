@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+main,
+footer {
+    text-align: center;
+    width: calc(1024px * .8);
+    margin: auto;
+}
+
+header,
+footer {
+    line-height: 20vh;
+    background-color: antiquewhite;
+}
+
+/* ================================================================= */
+/* main */
+
+main {
+    height: 60vh;
+}
+
+#section_article {
+    width: 70%;
+
+    float: left;
+}
+
+#section_article section {
+    line-height: calc(60vh * .6);
+    background-color: silver;
+}
+
+#section_article article {
+    line-height: calc(60vh * .4);
+    background-color: cadetblue;
+}
+
+main aside {
+    width: 30%;
+    line-height: 60vh;
+    background-color: burlywood;
+
+    /*
+        aside 에 float 미지정 시 aside 가 블럭요소이고 section_article 을
+        둘러싸고 aside 자신의 컨테트를 표현할 너비의 합이 section_article
+        보다 너무 작아 왼쪽에서 둘러싸지 못하고 section_article 의 하단에서
+        둘러싸는 현상이 발생되므로 반드시 aside 에 대한 float 지정 필요.
+        또는 aside 를 인라인 블럭요소로 변경함으로써 해결.
+        단, float 지정 시 main 의 높이를 지정하지 않으면 반드시 main 의
+        after 에 clear 를 걸어야만 footer 가 main 까지 치고 올라오는 것을
+        방지 가능.
+    */
+    /* float: left; */
+    /* float: right; */
+    /* display: inline-block; */
+
+    /*
+        또는 width 를 100% 을 지정하여도 aside 가 블럭요소이므로
+        aside 가 부모인 main 의 30% 가 아닌 main 의 너비를 다 차지하는
+        형태로 원하는 레이아웃 결과 확인 가능.
+    */
+    /* width: 100%; */
+    /* width: auto; */
+}
+
+/*
+    부모 main 의 높이가 이미 결정되어 있으므로 clear 를 안해도 무방.
+*/

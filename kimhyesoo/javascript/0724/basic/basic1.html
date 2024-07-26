@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+
+    <script>
+
+        //배열
+
+        var ar = [1, 2, 3]                          // 변수 선언과 동시에 배열값을 저장 
+
+        function f(i) {                            // 함수명(f), 인자(1개)
+            // return i * a    // 함수의 인자로 받은
+            // 값 (i) 와 배열의 index에 저장된 데이터를 다 더한 결과 반환(return)
+            // 문제 1) ar[0] + ar[1] + ar[2] 를 변수 선언하고 그 변수에 저장
+            // return 문을 수정 
+
+            var vvv = ar[0] + ar[1] + ar[2];             //vvv 변수를 선언하고  vvv변수에 ar[0] + ar[1] + ar[2]; 저장
+            console.log(vvv);                            //vvv 값을 불러옴 
+            return i * vvv + vvv
+        }
+
+        var result = 0;
+        result = f(3)
+        console.log(result);
+
+        ar = 40
+        //  ar 변수는 이미 변수선언과 동시에 배열을 저장함 
+        // 그 변수를 재활용하기 위해 변수명을 변경하지 않고 같은 변수명에 기존의 배열의 값이
+        // 사라지고 새로운 숫자가 저장 만약 새로운 변수로 선언하면 별도의 메모리 공간을 확보.
+        // 그 위치에 새로운 초기값을 저장 그것은 프로그램의 상황에 따라 적절하게 선언하는 것 
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

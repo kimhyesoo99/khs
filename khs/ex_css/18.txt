@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+}
+
+.logo {
+    background-color: blueviolet;
+}
+
+.menu {
+    background-color: yellowgreen;
+}
+
+.contents {
+    background-color: coral;
+}
+
+.aside {
+    background-color: cadetblue;
+}
+
+.footer {
+    background-color: deeppink;
+}
+
+#grid_container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* ================================================================================= */
+
+#grid_container {
+    display: grid;
+    height: 100vh;
+    grid-template: 1fr 3fr 1fr / repeat(2, 1fr) repeat(2, .5fr);
+
+    /* 
+        grid-template-areas 를 이용한 요소간 교차 병합 불가.
+    */
+    grid-template-areas:
+        "logo     menu       .     ."
+        "contents contents aside  aside"
+        ".        footer   footer  .";
+}
+
+.logo {
+    /* grid-area: logo; */
+}
+
+.menu {
+    /* grid-area: menu; */
+}
+
+.contents {
+    grid-area: contents;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.footer {
+    grid-area: footer;
+}

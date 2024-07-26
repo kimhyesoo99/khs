@@ -1,0 +1,38 @@
+.bg {
+    width: 400px;
+    height: 500px;
+    background: url("../image/bg1.jpg") 0/100% 100%;
+    box-sizing: border-box;
+    border: solid 1px;
+}
+
+.container {
+    /* 
+        container 자신이 아닌 자식요소인 bg 에 컨텐트의 너비를
+        지정하였으므로 마진의 auto 가 적용되지 않음.
+        따라서 너비에 대한 마진을 직접 연산하여 지정.
+    */
+    margin: calc((100vh - 500px)/2) calc((100% - 400px)/2);
+
+    position: relative;
+}
+
+.container a {
+    position: absolute;
+    background-color: cadetblue;
+
+    line-height: 30px;
+    padding: 0 10px;
+
+    top: calc((100% - 30px)/2);
+    /* top:50%;
+    transform: translateY(-50%); */
+}
+
+.leftBtn {
+    right: calc(100% + 20px);
+}
+
+.rightBtn {
+    left: calc(100% + 20px);
+}

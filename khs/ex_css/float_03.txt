@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    width: 700px;
+    height: 150px;
+    background-color: antiquewhite;
+    margin: auto;
+}
+
+.leftBox,
+.rightBox {
+    background-color: rgb(209, 184, 120);
+
+    /*
+		leftBox 와 rightBox 는 float 이 지정되어 line-height 속성으로는 수직 정렬 불가.
+	*/
+    margin: calc((150px - 115px)/2);
+}
+
+li {
+    background-color: cornflowerblue;
+    width: 50px;
+
+    /* 
+        line-height 만 지정시 확대/축소시 높이 계산시의 정밀도 문제로 단차가
+        발생되므로 height 도 반드시 지정해야함에 주의.
+        단, height 를 지정하더라도 아주 작게 축소시 px 표현의 한계로 단차 발생.
+    */
+    height: 50px;
+    /* 
+        line-height 는 border-box 를 지정하여도 contents 영역 내에서만 결정됨에 주의.
+        따라서 boder 와 padding 을 뺀 나머지에 대하여 line-height 를 지정.
+    */
+    line-height: 48px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-align: center;
+    margin: 5px;
+}
+
+/* =================================================================================== */
+
+/* 
+	※ float 의 해지는 부모가 블럭요소인 경우에만 배경 적용을 위해 clear 필요.
+
+	leftBox 와 rightBox 에 대한 float 지정으로 두 요소가 인라인 블럭과 같이
+	처리되고, 이에 대한 자식요소 li 에 대한 float 지정으로 인한 부모요소인
+	leftBox 와 rightBox 의 배경을 나타내게 하기위한 clear 불필요.
+*/
+.leftBox {
+    /* 리스트가 2개씩 배치되도록 하기 위해 너비 지정. */
+    width: 115px;
+    float: left;
+}
+
+.leftBox li {
+    float: right;
+}
+
+.leftBox li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.leftBox li:nth-child(n+3) {
+    margin-top: 0;
+}
+
+/* =================================================================================== */
+
+.rightBox {
+    float: right;
+    margin-top: calc((150px - 115px)/2 + 55px);
+}
+
+.rightBox li {
+    float: left;
+}
+
+.rightBox li:nth-child(-n+3) {
+    margin-right: 0;
+}
+
+/* .rightBox li:not(:last-child) {
+    margin-right: 0;
+} */

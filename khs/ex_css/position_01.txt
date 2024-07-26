@@ -1,0 +1,56 @@
+.container {
+    width: 5vh;
+    height: 5vh;
+
+    position: fixed;
+    left: calc((100% - 5vh)/2);
+    top: calc((100vh - 5vh)/2);
+}
+
+.box {
+    width: calc(100% * 5);
+    height: calc(100% * 5);
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+    line-height: calc(5vh * 5);
+    overflow: hidden;
+
+    position: absolute;
+}
+
+.b1 {
+    background-color: blue;
+
+    bottom: 0;
+
+    /* 
+        box 를 container 에 포함되는 보다 작은 요소(점)라 가정하고 수평 중앙 위치 계산.
+    */
+    left: calc((100% - 100% * 5)/2);
+    /* left: -200%; */
+}
+
+.b2 {
+    background-color: chartreuse;
+    color: black;
+
+    z-index: -1;
+    right: 0;
+}
+
+.b3 {
+    background-color: fuchsia;
+}
+
+.b1:hover {
+    z-index: 1;
+}
+
+.b2:hover {
+    z-index: 1;
+}
+
+.b3:hover {
+    z-index: -2;
+}

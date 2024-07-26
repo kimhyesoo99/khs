@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var randData = ['사랑', '믿음', '증오', '갈증', '해소']
+        const merge = (i) => {
+            var rrr = ''
+            for (var v = 0; v < i.length; v++) {
+                randIdx = parseInt(Math.random() * randData.length)
+                rrr += randData[Math.ceil(randIdx)] + i.length + '\n'
+            }
+
+            return rrr;
+        }
+
+        var rr = [10, 4, 7, 99, 100]
+        var result = rr.map(i => i * 3)
+            .map(i => i * 5)
+            .map(i => i + '입니다fads')
+            .map(merge)
+            // .map(i => i.length)
+            // .filter(i => i % 2 == 0)
+            .reduce((i, j) => i + j)
+
+        console.log(result);
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

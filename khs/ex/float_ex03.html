@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+            width: 100%;
+        }
+       
+
+        div {
+            margin: 0 auto;
+            width:80%;
+        }
+
+        li {
+            width:25%;
+            height: 50px;
+            line-height: 50px;
+            background-color: rgb(56, 45, 31);
+            color: aliceblue;
+            float: left;
+        }
+
+        ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        li:hover {
+            background-color: antiquewhite;
+            color: brown;
+        }
+
+        img  {
+            margin-top: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>apsb</li>
+            <li>sdsd</li>
+            <li>refe</li>
+            <li>fefd</li>
+        </ul>
+    </div>
+    <div>
+        <img src="./image/dress.png" alt="">
+    </div>
+    
+</body>
+</html>

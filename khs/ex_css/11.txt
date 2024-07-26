@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+}
+
+/* ================================================================================ */
+/* out frame */
+
+body {
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+footer,
+header,
+main {
+    width: calc(1024px*0.8);
+    flex: 6;
+}
+
+footer,
+header {
+    background-color: antiquewhite;
+    flex: 2;
+}
+
+header,
+main,
+footer,
+#section_article,
+#section_article section,
+#section_article article,
+#section_article section h2,
+#section_article article h2,
+main aside,
+main aside h2 {
+    display: flex;
+}
+
+header,
+footer,
+#section_article section h2,
+#section_article article h2,
+main aside h2 {
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================================================================================ */
+/* main frame */
+
+#section_article {
+    flex: 7;
+
+    flex-direction: column;
+}
+
+#section_article section {
+    flex: 6;
+}
+
+#section_article article {
+    flex: 4;
+}
+
+#section_article section h2 {
+    background-color: darkgrey;
+    position: relative;
+
+    flex:1;
+}
+
+#section_article article h2 {
+    background-color: cadetblue;
+    position: relative;
+
+    flex: 1;
+}
+
+main aside {
+    flex: 3;
+}
+
+main aside h2 {
+    background-color: burlywood;
+    position: relative;
+
+    flex: 1;
+}
+
+/* ================================================================================ */
+
+main #section_article section:hover h2,
+main #section_article article:hover h2 {
+    left: calc((100% / 7 * 3)/ 2);
+}
+
+main #section_article section:hover h2 {
+    top: calc((100% / 6 * 4) / 2);
+    z-index: 1;
+}
+
+main #section_article article:hover h2 {
+    bottom: calc((100% / 4 * 6) / 2);
+    z-index: 1;
+}
+
+main aside:hover h2 {
+    left: 100%;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>repeat 함수와 fr(Fraction) 및 아이템 높이에 대한 Stretch 특성</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body>
+    <h1>repeat 함수와 fr(Fraction) 및 Stretch 특성</h1>
+    <hr>
+
+    <h2>1. repeat 함수</h2>
+    <div class="grid container1">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+        <div class="box10">10</div>
+    </div>
+    <hr>
+
+    <div class="grid container2">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+        <div class="box10">10</div>
+    </div>
+    <hr>
+
+    <h2>2. fr(Fraction)</h2>
+    <div class="grid container3">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+        <div class="box10">10</div>
+    </div>
+    <hr>
+
+    <h2>3. stretch 특성</h2>
+    <div class="grid container4">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+    </div>
+    <hr>
+
+    <h2>4. 컨테이너의 높이가 결정되지 않은 상태에서의 fr </h2>
+    <div class="grid container5">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+
+</html>
+
+* {
+margin: 0;
+}
+
+.box1 {
+background-color: brown;
+}
+
+.box2 {
+background-color: blueviolet;
+}
+
+.box3 {
+background-color: blue;
+}
+
+.box4 {
+background-color: red;
+}
+
+.box5 {
+background-color: green;
+}
+
+.box6 {
+background-color: yellowgreen;
+}
+
+.box7 {
+background-color: black;
+}
+
+.box8 {
+background-color: coral;
+}
+
+.box9 {
+background-color: cadetblue;
+}
+
+.box10 {
+background-color: deeppink;
+}
+
+h2,
+hr {
+margin: 20px 0;
+}
+
+.grid div {
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+
+.grid {
+display: grid;
+}
+
+
+/* ============================================================================ */
+/* 1. repeat 함수 */
+
+.container1 {
+grid-template: 50px 50px / 200px 200px 200px 200px 200px;
+}
+
+.container2 {
+
+/*
+< repeat 함수>
+
+    - repeat 함수를 통해 연속적이고 반복적인 값을 축약.
+
+
+    형식 : repeat( 반복할 행 또는 열의 횟수, 반복할 행 또는 열의 크기 )
+
+    */
+    grid-template: repeat(2, 100px) repeat(3, 50px) / repeat(2, 300px);
+    }
+
+    /* ============================================================================ */
+    /* 2. fr(Fraction) */
+
+    .container3 {
+
+    /*
+    < fr(Fraction)> - fraction : 부분
+
+        - Grid 레이아웃에서 아이템들의 행 또는 열방향에 대한 상대적 비율 단위.
+        */
+        grid-template: repeat(2, 50px) / 3fr repeat(3, 1fr) 2fr;
+        }
+
+        /* ============================================================================ */
+        /* 3. stretch */
+
+        .container4 {
+        grid-template-columns: repeat(2, 1fr);
+
+        /*
+        Grid 의 아이템들은 부모 컨테이너에 높이를 지정하지 않는 경우 아이템이
+        갖는 컨텐트 만큼만 높이를 차지하지만, 부모 컨테이너에 높이를 지정하는 경우
+        아이템들에 별도의 높이를 지정하지 않아도 Flex 의 스트레치 특성과 같이
+        부모 컨테이너의 높이에 맞추어 늘어나는 특성을 가짐.
+        */
+        /* height: 500px; */
+        }
+
+        /* ============================================================================ */
+        /* 4. 컨테이너의 높이가 결정되지 않은 상태에서의 fr */
+
+        /*
+        아이템의 높이가 결정된 대상을 기준으로 상대적 비율이 결정.
+        */
+        .container5 {
+        grid-template-rows: 1fr 2fr 7fr;
+        }
+
+        .box1 {
+        /* height: 50px; */
+        }

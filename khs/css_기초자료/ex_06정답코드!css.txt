@@ -1,0 +1,42 @@
+ul {
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1px;
+    list-style: none;
+}
+
+span {
+    display: inline-block;
+    width: 100px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #6495ed;
+    color: antiquewhite;
+    font-size: larger;
+    opacity: 0.5;
+
+    /*
+        line-height 설정으로 인해 height 생략 가능.
+    */
+
+    /* height: 50px; */
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    margin-left: 100px;
+
+    display: none;
+}
+
+span:hover {
+    opacity: 1;
+}
+
+span:hover+img {
+    display: block;
+}

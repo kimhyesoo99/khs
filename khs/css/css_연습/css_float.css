@@ -1,0 +1,44 @@
+div {
+    background-color: antiquewhite;
+}
+
+.left,
+.right {
+    background-color: aqua;
+}
+
+.none {
+    background-color: coral;
+}
+
+.size {
+    width: 150px;
+    height: 50px;
+}
+
+img {
+    width: 150px;
+    height: 100px;
+}
+
+P {
+    text-align: justify;
+    word-break: break-all;
+}
+
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+img.left {
+    margin-right: 20px;
+}
+
+img.right {
+    margin-left: 20px;
+}

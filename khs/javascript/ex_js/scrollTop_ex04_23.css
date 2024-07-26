@@ -1,0 +1,35 @@
+.scrollTop {
+    width: 50px;
+    height: 40px;
+    background-color: cornflowerblue;
+    color: red;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    /*
+        visibility 도 트랜지션 적용시 포함시켜야 opacity 에
+        대한 트래지션 작동이 정상적으로 처리되는 것을 확인 가능.
+     */
+    transition:
+        opacity .5s ease-out,
+        visibility .5s ease-out,
+        width .7s ease-out;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scrollTop.visible {
+    cursor: pointer;
+    opacity: .6;
+    visibility: visible;
+}
+
+.scrollTop.visible:hover {
+    opacity: 1;
+    width: 70px;
+}

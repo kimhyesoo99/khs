@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var obj = {}                         //객체, key와 value의 쌍
+
+        obj['a'] = 100                      // key가 a인 곳에 값을 100지정
+        obj['b'] = 1000
+        obj['c'] = [1, 2, 3, 4, 5]
+
+        console.log(obj);
+
+        obj.name = ['홍길동', '종말자', '김개똥', '최수종']
+        console.log(obj.name);
+
+        // 문1) obj에 age (key)에 value를 배열로 지정 ([20,34,67,12])
+
+        obj.age = [20, 34, 67, 12]
+
+        for (var i = 0; i < obj.age.length; i++) console.log(obj.age[i]);
+
+        obj.age2 = {
+            'bb': [11, 23, 4, 5]
+        }
+
+        console.log(obj);
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

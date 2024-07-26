@@ -1,0 +1,27 @@
+.container {
+    background-color: deeppink;
+    width: 430px;
+    height: 430px;
+
+    display: flex;
+    flex-flow: column-reverse wrap-reverse;
+    justify-content: space-between;
+    align-content: space-between;
+
+    /* 
+        justify-content 와 align-content 를
+        대체하여 gap 을 지정.
+    */
+    /* gap: 10px; */
+}
+
+.container div {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    color: chartreuse;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

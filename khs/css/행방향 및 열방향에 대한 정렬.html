@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행방향 및 열방향에 대한 정렬</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body>
+    <h1>행방향 및 열방향에 대한 정렬</h1>
+    <hr>
+
+    <div class="grid_container">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+    </div>
+</body>
+
+</html>
+
+.box1 {
+background-color: brown;
+}
+
+.box2 {
+background-color: blueviolet;
+}
+
+.box3 {
+background-color: blue;
+}
+
+.box4 {
+background-color: red;
+}
+
+.box5 {
+background-color: green;
+}
+
+.box6 {
+background-color: yellowgreen;
+}
+
+.box7 {
+background-color: black;
+}
+
+.box8 {
+background-color: coral;
+}
+
+.box9 {
+background-color: cadetblue;
+}
+
+
+.grid_container div {
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+
+.grid_container {
+display: grid;
+height: 300px;
+background-color: yellow;
+grid-template-columns: repeat(3, 100px);
+grid-auto-rows: 50px;
+}
+
+/* ================================================================================= */
+
+/* 행 방향 전체 열그룹간 요소들에 대한 정렬 */
+.grid_container {
+/* justify-content: start; */
+/* justify-content: end; */
+/* justify-content: center; */
+/* justify-content: space-between; */
+/* justify-content: space-around; */
+/* justify-content: space-evenly; */
+}
+
+/* 행 방향 개별 열그룹 내에서의 요소간 행방향에 대한 정렬 */
+.grid_container {
+/* justify-items: stretch; */
+/* justify-items: start; */
+/* justify-items: end; */
+/* justify-items: center; */
+}
+
+/* 열 방향 전체 행그룹간 요소들에 대한 정렬 */
+.grid_container {
+/* align-content: start; */
+/* align-content: end; */
+/* align-content: center; */
+/* align-content: space-between; */
+/* align-content: space-around; */
+/* align-content: space-evenly; */
+}
+
+/* 열 방향의 개별 행그룹 내에서의에 요소간 열방향에 대한 정렬 */
+.grid_container {
+/* align-items: stretch; */
+/* align-items: start; */
+/* align-items: end; */
+/* align-items: center; */
+}
+
+/* 행 방향 개별 열 요소들에 행방향에 대한 개별 정렬 */
+.box7,
+.box9 {
+/* justify-self: end; */
+}
+
+/* 열 방향 개별 행 요소들에 열방향에 대한 개별 정렬 */
+.box1,
+.box3 {
+/* align-self: start; */
+}

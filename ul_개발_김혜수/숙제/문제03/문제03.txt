@@ -1,0 +1,19 @@
+  < 문제 >
+
+국, 영, 수 3 과목의 평균이 90 점 이상이면 A 학점, 90 점 미만이면서 80 점 이상이면
+B 학점, 80 점 미만이면서 70 점 이상이면 C 학점, 그 외에는 F 학점으로 표시되도록
+설정.
+*/
+'use strict';
+
+let str = '@ Javascript &';
+
+for (let i = 0; i < str.length; i++) {
+    console.log(str[i]);                 // 문자열에 대한 배열 인덱싱 제공.
+}
+console.log('--------');
+
+console.log('@ Javascript &'[0]);             // 문자열 자체에 대한 배열 인덱싱도 가능.
+console.log('@ Javascript &'[str.length - 1]);
+
+// console.log('@ Javascript &'[-1]);     // 파이썬과 같이 음수 인덱싱은 제공되지 않음.

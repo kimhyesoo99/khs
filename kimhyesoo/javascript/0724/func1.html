@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function a() {              // 함수 정의 (definition), 일반함수
+            console.log('일반함수');
+        }
+
+        a() // 함수호출 (call)
+
+        const b = function () {      // 익명함수 anaymous 함수 
+            console.log('익명함수');
+        }
+
+        b()  // 함수호출 (call)
+
+        const arrow1 = () => {
+            console.log('화살표함수') // 람다 함수 arrow function  화살표함수 
+        }
+
+        arrow1()  // 함수호출 (call)
+
+        console.clear
+
+        var funcs = [a, b, arrow1]
+
+        for (var i of funcs) {     //배열에 함수가 저장 
+            i()                    // 하나씩 꺼내어 호출함
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

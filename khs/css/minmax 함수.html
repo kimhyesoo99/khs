@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minmax 함수</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body>
+    <h1>minmax 함수</h1>
+    <hr>
+
+    <h2>1. minmax 함수</h2>
+    <div class="grid container1">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+    </div>
+    <hr>
+
+
+    <h2>2.</h2>
+    <div class="grid container2">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+    </div>
+    <hr>
+
+</body>
+
+</html>
+
+
+.box1 {
+background-color: brown;
+}
+
+.box2 {
+background-color: blueviolet;
+}
+
+.box3 {
+background-color: blue;
+}
+
+.box4 {
+background-color: red;
+}
+
+.box5 {
+background-color: green;
+}
+
+h2,
+hr {
+margin: 20px 0;
+}
+
+.grid div {
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: larger;
+font-weight: bold;
+color: white;
+}
+
+.grid {
+display: grid;
+column-gap: 3px;
+}
+
+/* ============================================================================ */
+
+.container1 {
+
+/*
+< minmax 함수>
+
+    - min 이상이면서 max 이하의 크기 범위를 설정.
+
+    형식 : minmax( min, max )
+    */
+    grid-template-columns: minmax(500px, 700px) minmax(200px, 300px);
+    }
+
+    /* ============================================================================ */
+
+    .container2 {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    }

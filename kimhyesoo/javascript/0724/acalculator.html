@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+
+    <script>
+
+        function add(i, j) {
+            return i + j
+        }
+
+        function minus(i, j) {
+            return i - j
+        }
+
+        function mul(i, j) {
+            return i + j
+        }
+
+        function div(i, j) {
+            return i / j
+        }
+
+        function mod(i, j) {
+            return i % j
+        }
+
+        var funcs = [add, minus, mul, div, mod]
+        // 문1) for of 문을 활용하여 함수 호출 하고 결과 출력
+        // 전달하는 인자는 2개 아무거나
+
+        for (var i of funcs) {
+            var denominator = parseInt(Math.random() * 10)
+            var rr
+
+            if (denominator != 0) {                                    // 랜덤의 숫자가 0이면 0으로 나눌수 없어요
+                rr = i(parseInt(Math.random() * 10), denominator)
+                console.log(rr)
+            } else {
+                rr = i(parseInt(Math.random() * 100), 3)
+                console.log(rr)
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

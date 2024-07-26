@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .parentBox {
+            background-color: antiquewhite;
+            width: 400px;
+        }
+
+        /* 
+    < transition 형식 >
+
+    transition : property name | duration | delay
+
+==================================================================
+
+    < delay 지정 가능 예약값 >
+
+- ease : 느리게 시작해서 점진적으로 빠르게 진행하다가 천천히 끝나는 애니메이션을 지정 (기본값)
+- linear : 처음부터 끝까지 동일한 속도로 애니메이션을 지정.
+- ease-in : 느린 시작으로 애니메이션을 지정.
+- ease-out : 느린 끝의 애니메이션을 지정.
+- ease-in-out : 시작과 끝이 느린 애니메이션을 지정.
+
+*/
+        .parentBox div {
+            width: 100px;
+            height: 100px;
+
+            /* 
+        시작값을 지정하지 않아도 트랜지션 적용이 되지만,
+        안정성을 위해 지정하는 것을 권장.
+    */
+            margin-left: 0px;
+        }
+
+        .childBox1 {
+            background-color: blue;
+
+            /*  호버 아웃시 트랜지션 적용 */
+            transition: margin-left 1.5s .3s;
+        }
+
+        .parentBox:hover .childBox1 {
+            margin-left: 300px;
+
+            /* 호버시 트랜지션 적용 */
+            transition: margin-left .3s 1s;
+        }
+
+        .childBox2 {
+            background-color: red;
+
+            /*  호버 아웃시 트랜지션 적용 */
+            transition: margin-left 1.8s 1.8s,
+                background-color 1.8s 1.8s;
+        }
+
+        .parentBox:hover .childBox2 {
+            background-color: aquamarine;
+            margin-left: 200px;
+
+            /* 호버시 트랜지션 적용 */
+            transition: margin-left .5s .3s,
+                background-color .5s .3S;
+        }
+
+        .childBox3 {
+            background-color: yellow;
+
+            /*  호버 아웃시 트랜지션 적용 */
+            transition: margin-left .3s 1s;
+        }
+
+        .parentBox:hover .childBox3 {
+            margin-left: 300px;
+
+            /* 호버시 트랜지션 적용 */
+            transition: margin-left 1.5s .3s;
+        }
+
+        .childBox4 {
+            background-color: darkcyan;
+            /* 
+        property name 과 delay 는 생략 가능하며,
+        이때에는 각각 all 과 0s 로 자동 지정.
+    */
+            transition: .3s;
+        }
+
+        .parentBox:hover .childBox4 {
+
+            /* 
+        수평, 수직 마진 적용을 순서대로 한다해서 수평 이동후 수직으로
+        이동하는 것이 아닌, 자연스럽게 대각선 이동도 가능.
+    */
+            margin-left: 100px;
+            margin-top: -100px;
+            /* transform: translate(100%, -100%); */
+
+            /* 호버시 트랜지션 적용 */
+            transition: 1.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transition</h1>
+    <hr>
+
+    <div class="parentBox">
+        <div class="childBox1"></div>
+        <div class="childBox2"></div>
+        <div class="childBox3"></div>
+        <div class="childBox4"></div>
+    </div>
+</body>
+
+</html>

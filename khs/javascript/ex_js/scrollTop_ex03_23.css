@@ -1,0 +1,30 @@
+.scrollTop {
+    width: 50px;
+    height: 40px;
+    background-color: cornflowerblue;
+    color: red;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transition: opacity .5s ease-out, width .7s ease-out;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scrollTop.visible {
+    visibility: visible;
+}
+
+.scrollTop.opacity {
+    cursor: pointer;
+    opacity: .6;
+}
+
+.scrollTop.visible:hover {
+    opacity: 1;
+    width: 70px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            width: 80vw;
+            height: 80vh;
+            background-color: tomato;
+        }
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: yellowgreen;
+            line-height: 100px;
+            color: wheat;
+            text-align: center;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .relative {
+            position: relative;
+            opacity: 0.6;
+            left: 30px;
+            top:50px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div>position : static;</div>
+        <div class="relative">position : relative;</div>
+        <div>position : static;</div>
+    </main>
+</body>
+</html>

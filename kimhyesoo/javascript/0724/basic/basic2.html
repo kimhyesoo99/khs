@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+
+    <script>
+
+        //배열
+
+        var ar = [1, 2, 3]
+
+        function f(i) {
+
+            var vvv = 0
+
+            // vvv += ar[0]
+            // vvv += ar[1]
+            // vvv += ar[2]
+
+            // 반복문
+
+            for (var i = 0; i < 3; i++) {
+                vvv += ar[i];
+            }
+
+            // for ~ of
+
+            for (var i of ar) {
+                vvv += i;
+            }
+
+            console.log(vvv);
+            return i * vvv + vvv
+        }
+
+        var result = 0;
+        result = f(3)
+        console.log(result);
+
+        ar = 40
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

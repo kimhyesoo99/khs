@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function vvv(i, j, k) {
+            console.log('vvv', i, j)
+            return i * j + k
+        }
+
+        // const f = () => {
+        //     return 7;
+        // }
+
+        const f = () => 7;
+
+        // 위아래 같은 의미 ! 
+
+        console.log(f());
+
+
+        const g = (v, i) => v(40, 70, i)     // 함수호츌
+
+        // console.log(g(i => i * 10));     // g안에 함수가 들어가야함 
+
+        // console.log(g(7));
+
+
+        for (var p of [1, 2, -3, 10, -100]) {
+            var rr = g(vvv, p);
+            console.log(rr);
+        }
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

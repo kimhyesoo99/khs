@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var obj = {}
+        obj['a'] = [10, 12, 34, 56]
+        var sum_1 = 0;
+        for (var r of obj.a) {
+            sum_1 += r;
+        }
+
+        console.log(sum_1);
+        console.clear()
+
+        sum_1 = 0
+        for (var i = 0; i < obj.a.length; i++) {
+            sum_1 += obj.a[i];   // i에 0 대입하고 i에 i 대입하고 i에 2 대입하고 i에 3 대입하고 
+        }
+        console.log(sum_1);
+        // i에 0 대입하면 obj.a[10]이 출력이 되고 1이 대입되면 obj.a[22]가 출력이 된다 
+
+        sum_1 = 0
+
+        sum_1 += obj.a[0]
+        sum_1 += obj.a[1]
+        sum_1 += obj.a[2]
+        sum_1 += obj.a[3]
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Header 태그</title>
+</head>
+
+<body>
+    <!--
+        < th(Table Header) 태그 >
+    
+    - 테이블의 행을 구성하는 개별 열(항목명)을 정의. 디폴트로 굵게(bold) 가운데 정렬이 적용.
+      td 태그와 동일한 tr 태그의 자식태그이지만, td 태그와 구분하여 항목의 값이 아닌 항목을
+      구분하는 속성명임을 명시함으로써 검색 효율을 증대.
+
+    ※ ul, ol, dl 태그와 마차가지로 tr 태그의 자식요소에는 th, td 이외의 태그가 직접 올 수
+       없지만, th 와 td 내에 다른 태그가 포함되는 것은 무방.
+    -->
+    <table border="1">
+        <tr>
+            <th>학번</th>
+            <th>성명</th>
+        </tr>
+
+        <tr>
+            <th>1</th>
+            <td>박성연</td>
+        </tr>
+
+        <tr>
+            <th>2</th>
+            <td>김철수</td>
+        </tr>
+
+        <tr>
+            <th>3</th>
+            <td>이영희</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header,
+main {
+    width: 600px;
+    margin: auto;
+}
+
+/* =========================================================================== */
+
+nav {
+    margin-bottom: 20px;
+    color: white;
+}
+
+nav>ul {
+    background-color: darkslategray;
+}
+
+/* 
+    개별 li 에 배경을 지정한 것이 아니라 ul 에 배경을 지정한 상태에서 모든
+    리스트(li)에 float 을 지정하였으므로 배경을 살리기 위해서 반드시 clear 필요.
+*/
+nav>ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+nav>ul>li {
+    float: left;
+    line-height: 40px;
+    width: 25%;
+    position: relative;
+
+    /* 
+        line-height 지정으로 height 는 미 지정해도 무방.
+        단, height 지정과 미 지정은 모든 코드 구현 완료시 결과적으로 동일하지만
+        과정상에는 차이가 존재.
+
+        height 지정시에는 높이가 결정되어 하위 리스트가 부모 높이 안에서
+		오버플로우되어 다른 요소에 영향을 주지않지만,
+        height 미 지정시에는 하위 리스트가 차지하는 크기만큼 부모의 크기가 늘어나
+        하위 ul 에 absolute 와 display(none) 을 미지정한 상태에서 상위 ul 의 배경이
+        나타나고 다른 요소(main)에 대한 위치에 영향을 주는 것을 확인 가능.
+    */
+    /* height: 40px; */
+}
+
+nav li {
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+nav ul ul {
+    background-color: cadetblue;
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    /* 
+        visiblity 는 자리를 차지하므로 불가.
+    */
+    display: none;
+}
+
+nav>ul>li:hover ul {
+    display: block;
+}
+
+nav ul ul li {
+    font-size: .7em;
+}
+
+/* =========================================================================== */
+
+main p {
+    text-align: justify;
+    word-break: break-all;
+}

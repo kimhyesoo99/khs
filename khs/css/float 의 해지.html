@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 의 해지</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body>
+    <h1>float 의 해지</h1>
+    <hr>
+
+    <h2>1. clear - left</h2>
+    <div class="clear_left">
+        <img class="float_left" src="image/Hallasan.JPG" alt="Hallasan">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque exercitationem magni, quibusdam quas quis
+            laudantium perferendis iusto.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque exercitationem magni, quibusdam quas quis
+            laudantium perferendis iusto.
+        </p>
+    </div>
+    <hr>
+
+    <h2>2. clear - right</h2>
+    <div class="clear_right">
+        <img class="float_right" src="image/Hallasan.JPG" alt="Hallasan">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque exercitationem magni, quibusdam quas quis
+            laudantium
+            perferendis iusto.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque exercitationem magni, quibusdam quas quis
+            laudantium
+            perferendis iusto.
+        </p>
+    </div>
+    <hr>
+
+    <h2>3. clear - both</h2>
+    <div class="clear_both">
+        <img class="float_left" src="image/Hallasan.JPG" alt="Hallasan">
+
+        <img class="float_right" src="image/Hallasan.JPG" alt="Hallasan">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis iusto.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque perferendis iusto.
+        </p>
+    </div>
+    <hr>
+
+    <h2>4. clear 의 활용</h2>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>
+
+* {
+margin: 0;
+}
+
+div {
+border: solid 1px red;
+padding: 10px;
+}
+
+img {
+width: 150px;
+height: 100px;
+}
+
+p {
+text-align: justify;
+word-break: break-all;
+}
+
+/* ==================================================== */
+
+.float_left {
+float: left;
+}
+
+.float_right {
+float: right;
+}
+
+/* ==================================================== */
+
+/*
+< float 의 해지>
+
+    - 비 float 요소에 대하여 clear 속성을 float 이 걸린 방향으로 지정함으로써
+    해당 시점부터 비 float 요소가 float 요소를 둘러싸는 특성을 해지 가능.
+    단, clear 해지 가능한 비 float 요소는 반드시 블럭요소만 가능함에 주의.
+    따라서 가상 요소 선택자를 이용함으로써 의미없는 html 코드를 추가하지 않고도
+    비 float 요소의 앞 또는 뒤에 CSS 차원에서 빈 코드를 추가하여 해지 가능.
+    */
+    .clear_left:hover img+p {
+    clear: left;
+    }
+
+    .clear_right:hover img+p::after {
+    content: "";
+    display: block;
+    clear: right;
+    }
+
+    .clear_both img+p::after {
+    /* content: "";
+    display: block;
+
+    clear:both; */
+    }
+
+    /* ==================================================== */
+
+    div {
+    border: none;
+    padding: 0;
+    }
+
+    .container {
+    background-color: antiquewhite;
+    width: 500px;
+    }
+
+    .container div {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: solid 1px red;
+    text-align: center;
+    line-height: 100px;
+
+    /* float: right; */
+    }
+
+    /*
+    부모 요소의 높이가 결정되어 있지 않고 부모 요소 내에 float
+    요소만 존재하는 경우 부모는 float 요소의 높이를 인지하지 못함
+    으로써 배경이 적용되지 않는 문제점 발생.
+    따라서 가상의 비 float 요소에 대한 float 해지를 통해 부모가
+    float 요소의 높이를 인식하게 함으로써 배경 적용이 가능.
+    단, 이는 부모 요소가 블럭요소인 경우에만 해당되며, 부모요소가
+    인라인 블럭요소인 경우에는 clear 를 안해도 float 이 지정된
+    자식의 높이를 인지하여 배경이 적용.
+    */
+    /* .container::after {
+    content: "";
+    display: block;
+    clear:right;
+    } */
+
+    /* .container {
+    display: inline-block;
+    } */
+
+
+    // 클리어 > 블럭요소여야 풀림

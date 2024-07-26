@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+}
+
+.logo {
+    background-color: blueviolet;
+}
+
+.menu {
+    background-color: yellowgreen;
+}
+
+.contents {
+    background-color: coral;
+}
+
+.aside {
+    background-color: cadetblue;
+}
+
+.footer {
+    background-color: deeppink;
+}
+
+#grid_container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* ================================================================================= */
+
+#grid_container {
+    height: 100vh;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
+
+}
+
+.menu {
+    /* 
+        병합은 그리드 개별 요소에 대하여 사각형 형태로만 병합 가능.
+        요소간 교차 병합도 가능한데 이때에는 교차되는 요소간
+        grid-row 나 grid-column 생략 불가.
+        교차가 되지 않는다면 하기 상황에서 grid-column 은 생략이 가능하지만,
+        교차가 되는 경우에는 아래와 같이 grid-row:, grid-column 생략 불가.
+    */
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    /* grid-area: 1 / 2 / 3 / 3; */
+
+    z-index: 1;
+}
+
+.contents {
+    grid-column: 1 / 3;
+    grid-row: 2 / -2;
+}
+
+.aside {
+    grid-row: 1 / -2;
+}
+
+.footer {
+    grid-column: 1 / -1;
+}

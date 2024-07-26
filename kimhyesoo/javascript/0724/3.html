@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // var tt = [{ 'a': [10, 20, 30, 40] }]
+
+        // tt.push({ 'a': [11, 23, 24, 56] })
+        // tt.push({ 'a': [111, 213, 214, 516] })
+        // tt.push({ 'a': [131, 213, 214, 516] })
+
+        // console.log(tt);
+
+        // console.log(tt[0].a);
+        // console.log(tt[1].a);
+        // console.log(tt[2].a);
+        // console.log(tt[3].a);
+
+
+        // var rr = [{ 'a': [1, 2, 3], 'b': [3, 4, 7] },
+        // { 'a': [4, 7, 8], 'b': [1, 2, 3] },
+        // { 'a': [11, 12, 13], 'b': [4, 5, 6] },
+        // { 'a': [4, 5, 6], 'b': [11, 3, -1] },
+        // ]
+
+        // // for (var tot of tt) {
+        // //     for (var tote of tot['b']) {
+        // //         console.log(tote);
+        // //     }
+        // //     console.log('===========================================');
+        // // }
+
+        // console.clear()
+
+        // for (var i = 0; i < rr.length; i++) {
+        //     for (var j = 0; j < rr[i].b.length; j++) {
+        //         console.log(rr[i].b[j]);
+        //     }
+        // }
+
+        var rr1 = [
+            { 'a': [1, 2, 3], b: [[3, 4, 7], [11, -1, -2]] },
+            { 'a': [4, 7, 8], b: [[1, 2, 3], [-1, -2, -3]] },
+            { 'a': [11, 12, 13], b: [[4, 5, 6], [2, 3, 7]] },
+            { 'a': [4, 5, 6], b: [[11, 3, -1], [1, -1, -7]] }
+        ]
+
+        var cnt = 0
+        for (var u of rr1) {
+            for (var p of u['b']) {
+                for (var q of p) {
+                    console.log(q, '갯수증가', cnt++)
+                }
+            }
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<!-- 
+{a : [1,2,3,4]} =>  {} 객체 (obj)
+
+a => key / [1,2,4,5] => value
+
+[a] => kye값을 줌
+
+i['a'] => value 값 불러옴
+
+value 타입 배열 
+
+객체 중괄호 {} 콜론
+
+키 > 콜론 > 벨류
+ -->

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적프로그램</title>
+    <script>
+
+        // // 변수 선언
+
+        // var result = 70
+        // var grade = ''
+
+        // if (result >= 100) grade = '수'      //result의 값이 100이상이면 
+        // // grade의 값을 '수' 로 저장
+
+        // console.log(grade);
+
+
+        /*
+        
+        국어 : 
+        영어 :
+        수학 : 
+
+        총점 : 
+        평균 :
+
+        국어 = 50
+        영어 = 100
+        수학 = 70
+
+        총점 = 국 + 영 + 수
+        
+        평균 = 총점/3
+
+        평균이 90 이상이면 수
+        평균이 80 이상이면 우
+        평균이 60 미만이면 가
+        */
+
+        // 성적 프로그램
+
+        let a = 50;
+        let b = 100;
+        let c = 70;
+
+        let tot = a + b + c;      // 총점(tot)은 50 + 100 + 70 = 220
+        let n = tot / 3;          // 평균(n)은 총점(tot) / 3
+        let grade
+
+
+        if (n >= 90) {
+            grade = '수'
+        } else if (n >= 80) {
+            grade = '우'
+        } else if (n >= 70) {
+            grade = '미'
+        } else {
+            grade = '가'
+        }
+
+        console.log(`국어 : ${a}, 영어 : ${b}, 수학 : ${c}, 등급 : ${grade}`);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+
+/*
+
+배열
+데이터 타입 = 정수 실수 문자열
+데이터 타입을 저장하기 위해 배열을 사용
+변수명 (베열명) []
+
+
+
+*/

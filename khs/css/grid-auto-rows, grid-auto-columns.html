@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-auto-rows, grid-auto-columns</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body>
+    <h1>grid-auto-rows, grid-auto-columns</h1>
+    <hr>
+
+    <div class="grid container1">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+        <div class="box10">10</div>
+    </div>
+    <hr>
+
+    <div class="grid container2">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+        <div class="box10">10</div>
+    </div>
+    <hr>
+
+    <div class="grid container3">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+        <div class="box10">10</div>
+    </div>
+</body>
+
+</html>
+
+.box1 {
+background-color: brown;
+}
+
+.box2 {
+background-color: blueviolet;
+}
+
+.box3 {
+background-color: blue;
+}
+
+.box4 {
+background-color: red;
+}
+
+.box5 {
+background-color: green;
+}
+
+.box6 {
+background-color: yellowgreen;
+}
+
+.box7 {
+background-color: black;
+}
+
+.box8 {
+background-color: coral;
+}
+
+.box9 {
+background-color: cadetblue;
+}
+
+.box10 {
+background-color: deeppink;
+}
+
+.grid div {
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+
+.grid {
+display: grid;
+}
+
+/* ================================================================================= */
+
+.container1 {
+grid-template-columns: repeat(auto-fill, 100px);
+grid-auto-rows: 50px;
+}
+
+.container2 {
+
+grid-auto-columns: 200px;
+grid-auto-rows: 50px;
+
+/* grid-template-columns: 200px;
+grid-auto-rows: 50px; */
+}
+
+.container3 {
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+grid-auto-rows: 50px
+}

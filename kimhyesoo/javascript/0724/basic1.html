@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // 객체는 kye:value의 쌍으로 이루어진 데이터
+        // 증괄호로 감싸진 
+        // () => 소괄호, [] => 대괄호, {} => 중괄호
+        // 객체에 데이터를 저장하려면 
+        // 변수명에 대괄호 안에 key 값을 문자열로 저장하고 = 오른쪽에
+        // 값을 저장하면 
+        // 예를 들어
+
+        // var obj = {}
+        // obj['사랑'] = 11  // {'사랑':11} 이렇게 저장
+
+        // 객체에서 데이터를 읽을때는 객체 이름 []안에 key 값을 주면 
+        // 대응되는 value 값을 반환 (return) 함
+        // 또한 사용의 편의성을 고려하여 대괄호를 사용하지 않고 .으로 접근가능
+        // .은 접근 연산자 (acces operator of member operator )임 
+
+        // obj.홍길동 = 13
+        // console.log(obj);
+
+        // var rrr = []
+        // rrr.push(3)
+        // var rrrr = [1, 2]
+        // rrr.push({ '김혜수': '내국인' })
+        // console.log(rrrr);
+
+
+        console.log('===========================================');
+
+
+        // var obj = { 'name': [] }
+        // obj.name.push
+
+        // var names = ['김경중', '김시준', '김영준', '김혜수',
+        //     '박보근', '박지열', '서혜인', '안성주', '유세현', '윤선호',
+        //     '이충만', '전재윤', '정승균', '조무암', '최유림', '최현재',
+        //     '허태찬', '이혜리']
+
+        // var obj = { 'name': [] }
+
+
+        // for (var i of names) {
+        //     obj.name.push(i)
+        //     console.log(obj)
+        // }
+
+        // console.clear()
+
+        // // 문1) obj의 name에 저장된 문자열의 배열의 길이의 총합 구하기 
+
+        // var total = 0;
+
+        // for (var i of obj.name) {
+        //     total += i.length
+        // }
+
+        // console.log(total);
+        // var names_1 = names.map(i => i + '입니다')
+        // console.log(names_1);
+        // var reduced_i = names.reduce((i,j) => i + j, '')
+        // console.log(reduced_i);
+
+
+
+        console.log('===========================================');
+
+
+        var final_goodmoring = [
+            { 'a': { 'b': [11, 23, 45, 34, 89] } },            // 객체안에 value가 객체 (b가 kye이고 value는 배열)
+            { 'a': { 'b': [111, 213, 415, 314, 819] } },
+            { 'a': { 'b': [113, 233, 453, 343, 893] } },
+            { 'a': { 'b': [114, 234, 454, 344, 894] } },
+        ]
+
+        console.log(final_goodmoring[0].a.b);
+
+        var final_obj = {}
+
+        for (var i of final_goodmoring) {
+            var cnt = 0;
+            for (var j of i.a.b) {
+                console.log('j:', j);
+                cnt++
+                final_obj['사랑' + cnt] = j;
+                total_sum += j
+                console.log('total_sum:', total_sum);
+            }
+        }
+        console.log('total_sum:', total_sum);
+        final_obj['final_sum'] = total_sum
+        console.log('final 결과 :', final_obj);
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

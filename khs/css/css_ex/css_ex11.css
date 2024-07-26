@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    width: 700px;
+    height: 150px;
+    background-color: bisque;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.leftBox {
+    width: 115px;
+    height: 115px;
+    background-color: rgb(176, 106, 106);
+    float: left;
+}
+
+.leftBox,
+.rightBox {
+    margin: 15px;
+}
+
+.rightBox {
+    width: 225px;
+    height: 60px;
+    background-color: rgb(176, 106, 106);
+    float: right;
+}
+
+.leftBox>li {
+    box-sizing: border-box;
+    width: 50px;
+    background-color: aquamarine;
+    border: 1px solid red;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 50%;
+    float: right;
+    margin: 5px;
+}
+
+
+.leftBox>li:not(:nth-child(2n+1)) {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.leftBox>li:not(:nth-child(n+3):nth-child(-n+4)) {
+    margin-bottom: 0px;
+}
+
+
+.rightBox {
+    margin-top: 70px;
+}
+
+.rightBox>li {
+    box-sizing: border-box;
+    width: 50px;
+    background-color: aquamarine;
+    margin: 5px;
+    float: left;
+    border: 1px solid red;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 50%;
+}
+
+.rightBox>li:not(li:nth-child(1)) {
+    margin-left: 0px;
+}

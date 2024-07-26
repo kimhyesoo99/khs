@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const date = [
+            '차', '차', '트럭', '트럭', '자전거', '자전거', '걷기', '차', '벤', '자전거', '걷기', '차', '벤', '차', '트럭'
+        ]
+
+        const transportation = date.reduce((obj, item) => {
+            if (!obj[item]) obj[item] = 0       // 객체에 key값이 없으면 0으로 설정
+            obj[item]++;                        // 그 다음부터는 숫자값을 1 증가 시킴
+            console.log(item);
+            return obj
+        }, {})                                  // 처음에는 빈 객체로 시작하여 
+
+        console.log(transportation);
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+}
+
+/* ================================================================================ */
+/* out frame */
+footer,
+header,
+main {
+    width: calc(1024px*0.8);
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer,
+header {
+    background-color: antiquewhite;
+    line-height: calc(100vh * .2);
+}
+
+/* ================================================================================ */
+/* main frame */
+
+main {
+    height: 60vh;
+
+    /* 
+        aside 를 main 내에 absolute 포지션을 이용하여 배치하기 위해
+        main 을 aside 의 부모의 자격이 되도록 포지션 지정을 하여도
+        변함이 없는 relative 로 포지션을 지정.
+    */
+    position: relative;
+}
+
+#section_article {
+    width: 70%;
+    height: 100%;
+}
+
+main #section_article section {
+    height: 60%;
+}
+
+main #section_article article {
+    height: 40%;
+}
+
+main #section_article section h2 {
+    background-color: darkgrey;
+    line-height: calc(60vh*0.6);
+    position: relative;
+}
+
+main #section_article article h2 {
+    background-color: cadetblue;
+    line-height: calc(60vh*0.4);
+    position: relative;
+}
+
+main aside {
+    width: 30%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    /* 
+        main 의 너비를 블럭요소인 section_artice 이 다 차지한 상태에서 블럭요소인
+        aside 의 위치는 main 을 오버플로우하여 위치하게 되므로, aside 위치를 기준
+        으로 relative 포지션을 이용한 위치 조정도 가능.
+    */
+    /* position: relative;
+    left: 70%;
+    bottom: 100%; */
+}
+
+main aside h2 {
+    background-color: burlywood;
+    line-height: 60vh;
+    position: relative;
+}
+
+/* ================================================================================ */
+
+/*
+    < 요소의 중앙 정렬 >
+    
+- 전체 크기에서 요소의 크기를 뺀 절반을 사이드 경계로부터 이격함으로써 중앙 정렬.
+    단, 전체 크기에 포함되는 요소와 요소의 비율이 확인되는 경우에는 상대 요소 비율
+    크기에 대한 절반을 경계로부터 이격함으로써 중앙 정렬 가능.
+
+=====================================================================
+
+    <  전체 크기를 모르는 경우의 방정식 >
+
+main 의 너비(x)
+section 의 너비(y)
+
+y = x * 0.7    =>      x = y / 0.7
+
+
+    < main 에 대한 section 의 수평 중앙 정렬 >
+
+- 정렬 대상 요소(section)의 크기 비율로 전체 크기를 구한후 전체 크기에 대한
+    상대 요소(aside) 비율의 절반을 경계로부터 이격함으로써 중앙 정렬.
+
+※   ( y / 0.7 * 0.3 ) / 2
+
+=====================================================================
+
+    < 비율을 활용한 전체 크기 구하기 >
+
+- 7 : 3 비율을 가정할 때 전체 크기는 10 이 되므로 해당요소(y)의 크기를
+    자신(y)의 비율로 쪼갬으로써 10 분의 1 의 크기가 얻어지므로 이에 10 배를
+    함으로써 전체 크기를 산출 가능.
+
+※    y / 7 * 10
+
+=====================================================================
+
+    < 비율을 활용한 상대 요소 크기 구하기 >
+
+- 7 : 3 비율을 가정할 때 전체 크기는 10 이 되므로 해당요소(y)의 크기를
+    자신(y)의 비율로 쪼갬으로써 10 분의 1 의 크기가 얻어지므로 이에 상대
+    요소의 비율을 곱함으로써 상대요소의 크기 산출 가능.
+
+※    y / 7 * 3
+
+*/
+main #section_article section:hover h2,
+main #section_article article:hover h2 {
+    left: calc((100% / 7 * 3)/ 2);
+    z-index: 1;
+}
+
+
+main #section_article section:hover h2 {
+    top: calc((100% / 6 * 4) / 2);
+}
+
+main #section_article article:hover h2 {
+    bottom: calc((100% / 4 * 6) / 2);
+    z-index: 1;
+}
+
+main aside:hover h2 {
+    left: 100%;
+    /* right: -100%; */
+}

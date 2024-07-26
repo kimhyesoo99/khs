@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Nation</title>
+
+    <style>
+        div {
+            text-align: center;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+        }
+
+        /* 
+      < inline-bloock 을 활용한 Page nation 생성 >
+
+    - 인라인 요소인 a 태그에 대한 크기 설정을 위해 diplay 속성을 inline-block 으로 변경.
+    */
+        a {
+            display: inline-block;
+            width: 30px;
+            background-color: silver;
+            text-decoration: none;
+            line-height: 30px;
+        }
+
+        a:not([href^="#"]) {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<!-- 
+    < 문제 >
+
+1) 이미지와 페이지 네이션은 페이지의 수평 중앙에 배치.    
+2) 이미지의 너비와 높이는 500 px 로 지정.
+3) 페이지 네이션의 너비와 높이는 30 px 로 지정.
+4) 페이지 네이션의 넘버링은 수평, 수직 모두 중앙에 배치.
+5) 내부 스타일 시트로 적용.
+6) 클래스, ID 선택자 사용 금지.
+
+-->
+
+<body>
+    <h1>Page Nation</h1>
+    <hr>
+
+    <div><img src="./image/bg1.jpg" alt="img1"></div>
+
+    <!-- div>a[href=./html/subPage$.html]{$}*5 -->
+    <div>
+        <a href="#">1</a>
+        <a href="./html/subPage2.html">2</a>
+        <a href="./html/subPage3.html">3</a>
+        <a href="./html/subPage4.html">4</a>
+        <a href="./html/subPage5.html">5</a>
+    </div>
+</body>
+
+</html>
+
+
+
+<link rel="stylesheet" href="../css.css">

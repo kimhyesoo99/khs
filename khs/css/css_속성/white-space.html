@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>white-space</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body>
+    <h1>white-space</h1>
+    <hr>
+
+    <h2>1 - normal, h2:nth-of-type(1):hover-nowrap</h2>
+    <P>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    </P>
+
+    <h2>2 - pre</h2>
+    <P>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    </P>
+
+    <h2>3 - pre-wrap</h2>
+    <P>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    </P>
+
+    <h2>4 - pre-line</h2>
+    <P>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+        quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    </P>
+</body>
+
+</html>
+
+
+
+p {
+background-color: antiquewhite;
+width: 500px;
+margin-bottom: 50px;
+}
+
+/*
+< normal>
+
+    - white-space 속성 미설정 시의 디폴트 값으로 white-space 문자(공백, 탭, 개행)를 모두 공백으로 처리하고
+    연속된 white-space 문자도 하나의 공백으로만 인정.
+    또한 텍스트가 수평 너비 영역 끝에 닿으면 자동으로 개행되는 특성.
+    */
+    p:nth-of-type(1) {
+    white-space: normal;
+    }
+
+    /*
+    < nowrap>
+
+        - normal 특성에서 텍스트가 수평 너비 영역 끝에 닿을때 자동 개행되는 특성을 해제.
+        */
+        h2:nth-of-type(1):hover+p {
+        white-space: nowrap;
+        }
+
+        /*
+        < pre>
+
+            - pre 태그와 동일한 기능.
+            */
+            p:nth-of-type(2) {
+            white-space: pre;
+            }
+
+            /*
+            < pre-wrap>
+
+                - pre 속성과 동일하게 적용되데 수평 너비 영역을 벗어났을 때 nowrap 되는 특성을 warp 으로 변경.
+                */
+                p:nth-of-type(3) {
+                white-space: pre-wrap;
+                }
+
+                /*
+                < pre-line>
+
+                    - pre 속성과 동일하게 적용되데 탭과 연속 공백을 제외한 개행만을 인정을 하고 wrap 특성 적용.
+                    */
+                    p:nth-of-type(4) {
+                    white-space: pre-line;
+                    }

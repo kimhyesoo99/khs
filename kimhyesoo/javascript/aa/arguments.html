@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function f(a, b, ...c) {                        //...은 spread operator
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(c);
+
+            var s = 0;
+            // for (var a of b) {                  //b는 iterable 가능한 데이터 
+            //     s += a
+            // }
+
+            for (var i = 0; i < b.length; i++) s += b[i]
+
+            console.log(s)
+
+        }
+
+        f(1, 110, 2, 3, 4, 5)
+        var vv = [1, 2, 3, 4, 11]
+        var uu = [1, 2, 3, 4, 5, ...vv]
+
+        console.log(uu)
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================================================================ */
+/* out frame */
+header,
+main,
+footer {
+    width: calc(1024px*0.8);
+    /* calc :  */
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer {
+    background-color: antiquewhite;
+    line-height: 20vh; 
+	// line-height: 20vh;  : 1;6;3
+}
+
+/* ================================================================================ */
+/* common settings */
+
+header h1,
+header h1 a,
+header nav,
+header nav li,
+header nav li a,
+#section_article,
+main aside {
+    display: inline-block;
+}
+
+header h1 a,
+header nav li a {
+    text-indent: -9999em;
+	// 텍스트 날리기
+}
+
+/* ================================================================================ */
+/* header frame */
+
+header h1 {
+
+    /*
+        a 태그에 수직 정렬을 위한 마진을 적용해도 되지만 바깥쪽
+        요소에 적용하는 것이 좀 더 정밀한 수직 정렬 지정이 가능.
+    */
+    margin: calc((20vh - 150px)/2) 20px;
+    /* margin: calc(10vh - 150px/2) 20px; */
+}
+
+header h1 a {
+
+    /*
+        text-indent 속성 지정으로 인해 너비와 높이를 지정해야만 영역
+        지정이 되어 백그라운드 속성이 적용됨에 주의.
+    */
+    width: 150px;
+    height: 150px;
+    background: url(../image/starbucks_logo.jpg) no-repeat 0/150px;
+}
+
+header nav {
+    margin: calc((20vh - 38px) /2) 20px;
+
+    /*
+        인라인 블럭요소로 지정된 h1 과 nav 요소는 높이를 같게 지정하더라도 컨텐트 영역 내에서
+        기본적인 텍스트에 대한 baseline 을 맞추었을 때 h1 이 nav 요소보다 더 높이가 낮은 지점에서
+        부터 시작되므로, 이 단차를 맞추기 위해서 nav 태그의 vertical-align 을 h1 요소의 top 또는
+        bottom 으로 맞추어야만 동일한 수직 높이를 유지.
+    */
+    vertical-align: top;
+}
+
+header ul li {
+    margin-left: 23px;
+}
+
+header ul li a {
+    width: 108px;
+    height: 38px;
+    background: url(../image/CSS3_10__Box_Model_exam.JPG) -3px -3px;
+}
+
+header ul li:nth-child(2) a {
+    background-position-x: calc(-3px - 109px);
+}
+
+/* 
+    수평 방향 2, 3 번째 이미지의 width 가 108px 이 아닌 109px 임에 주의.
+*/
+header ul li:nth-child(3) a {
+    background-position-x: calc(-3px - 109px * 2 - 1px);
+}
+
+header ul li:nth-child(4) a {
+    background-position-x: calc(-3px - 109px * 3 - 2px);
+}
+
+header ul li a:hover {
+    background-position-y: calc(-3px - 39px);
+}
+
+/* ================================================================================ */
+/* main frame */
+
+#section_article {
+    width: 70%;
+
+    /* section 과 article 에서의 line-height 지정으로 height 지정 불필요. */
+    /* height: 100%; */
+}
+
+/* 
+    section 과 article 에서의 line-height 지정이 개별
+    h2 에 상속되므로 h2 에 별도의 지정 필요없음.
+*/
+section {
+    background-color: darkgrey;
+    line-height: calc(60vh * .6);
+}
+
+article {
+    background-color: cadetblue;
+    line-height: calc(60vh * .4);
+}
+
+aside {
+    width: 30%;
+    background-color: burlywood;
+    margin-left: -6px;
+    line-height: 60vh;
+
+    /* 
+        인라인 블럭인 section_article 을 하나의 텍스트라 가정했을 때, aside 가
+        article 의 텍스트를 기준으로 수직 위치가 결정되는 것을 확인 가능.
+        따라서 aside 의 vertical-align 을 top 이나 bottom 으로 조정하여 수직
+        위치를 정렬.
+    */
+    vertical-align: top;
+}
+
+
+/*  */
